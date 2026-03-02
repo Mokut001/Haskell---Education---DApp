@@ -1,0 +1,2 @@
+module ScholarsGate.Governance.Institution where
+import PlutusTx.Prelude
