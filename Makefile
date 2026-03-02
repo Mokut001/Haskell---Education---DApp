@@ -1,0 +1,1 @@
+compile:\n\tcabal build all\n\tcabal run scholars-compiler
