@@ -1,29 +1,28 @@
 'use client';
-import { Microscope, Activity } from 'lucide-react';
+import { Search, BadgeCheck, University } from 'lucide-react';
 
-export default function Research() {
+export default function Verify() {
   return (
     <div className="max-w-7xl mx-auto px-10 pt-40">
-      <div className="flex justify-between items-center mb-20">
-        <h2 className="text-6xl font-black italic tracking-tighter">Research <span className="text-indigo-600">Funding.</span></h2>
-        <div className="flex items-center gap-3 bg-emerald-500/10 px-6 py-3 rounded-full border border-emerald-500/20">
-           <Activity className="text-emerald-500 animate-pulse" size={16} />
-           <span className="text-[10px] font-black text-emerald-500 uppercase tracking-widest">Protocol Sync: 100%</span>
+      <h2 className="text-6xl font-black italic border-b border-white/5 pb-10 mb-20">Registry <span className="text-indigo-600">Trace.</span></h2>
+      <div className="grid lg:grid-cols-12 gap-20">
+        <div className="lg:col-span-8 space-y-12">
+           <div className="bg-[#0b0e14] p-12 rounded-[50px] border border-white/5 shadow-2xl">
+              <div className="flex items-center gap-4 bg-[#020306] p-4 rounded-[30px] border border-white/5 mb-10">
+                 <Search className="text-slate-600 ml-4" />
+                 <input className="bg-transparent flex-1 outline-none font-bold text-xl" placeholder="Credential Hash or Student ID..." />
+              </div>
+              <p className="text-center text-slate-700 text-[10px] font-black uppercase tracking-widest italic">Enter a unique identifier to query the Haskell ledger</p>
+           </div>
         </div>
-      </div>
-      <div className="grid lg:grid-cols-3 gap-10">
-        {[1,2,3].map(i => (
-          <div key={i} className="bg-[#0b0e14] p-10 rounded-[40px] border border-white/5 shadow-xl hover:border-indigo-600/30 transition-all group">
-             <div className="p-4 bg-indigo-600/10 rounded-2xl w-fit mb-8 group-hover:scale-110 transition-transform">
-                <Microscope className="text-indigo-600" />
-             </div>
-             <h4 className="text-2xl font-black italic mb-2">Project Delta-{i}</h4>
-             <p className="text-sm text-slate-500 font-medium leading-relaxed mb-10 italic">Advanced quantum communication protocols for secure research data transmission.</p>
-             <div className="h-1 bg-white/5 rounded-full overflow-hidden">
-                <div className="h-full bg-indigo-600 w-1/3 shadow-[0_0_10px_#4f46e5]" />
-             </div>
-          </div>
-        ))}
+        <div className="lg:col-span-4 bg-indigo-600/5 border border-indigo-600/20 p-12 rounded-[50px]">
+           <BadgeCheck className="text-indigo-500 mb-6" size={40} />
+           <h4 className="text-xl font-black mb-6 italic uppercase">Chain Validity</h4>
+           <div className="space-y-4">
+              <div className="flex justify-between text-xs py-2 border-b border-white/5"><span className="text-slate-500">Status</span> <span className="font-bold text-emerald-500 tracking-widest">ACTIVE</span></div>
+              <div className="flex justify-between text-xs py-2 border-b border-white/5"><span className="text-slate-500">Node</span> <span className="font-bold">Mainnet Relay 1</span></div>
+           </div>
+        </div>
       </div>
     </div>
   );
