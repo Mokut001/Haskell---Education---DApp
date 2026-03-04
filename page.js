@@ -1,29 +1,27 @@
 'use client';
-import { Search, BadgeCheck, University } from 'lucide-react';
+import { ArrowRight, GraduationCap, ShieldCheck, Sparkles } from 'lucide-react';
+import Link from 'next/link';
 
-export default function Verify() {
+export default function Home() {
   return (
-    <div className="max-w-7xl mx-auto px-10 pt-40">
-      <h2 className="text-6xl font-black italic border-b border-white/5 pb-10 mb-20">Registry <span className="text-indigo-600">Trace.</span></h2>
-      <div className="grid lg:grid-cols-12 gap-20">
-        <div className="lg:col-span-8 space-y-12">
-           <div className="bg-[#0b0e14] p-12 rounded-[50px] border border-white/5 shadow-2xl">
-              <div className="flex items-center gap-4 bg-[#020306] p-4 rounded-[30px] border border-white/5 mb-10">
-                 <Search className="text-slate-600 ml-4" />
-                 <input className="bg-transparent flex-1 outline-none font-bold text-xl" placeholder="Credential Hash or Student ID..." />
-              </div>
-              <p className="text-center text-slate-700 text-[10px] font-black uppercase tracking-widest italic">Enter a unique identifier to query the Haskell ledger</p>
-           </div>
+    <main className="max-w-7xl mx-auto px-10 pt-40 pb-20">
+      <div className="space-y-10 mb-32">
+        <div className="inline-flex items-center gap-3 bg-indigo-600/10 border border-indigo-600/20 px-6 py-3 rounded-full">
+           <Sparkles size={16} className="text-indigo-500" />
+           <span className="text-[10px] font-black uppercase tracking-[0.3em] text-indigo-500">Decentralized Academic Intelligence</span>
         </div>
-        <div className="lg:col-span-4 bg-indigo-600/5 border border-indigo-600/20 p-12 rounded-[50px]">
-           <BadgeCheck className="text-indigo-500 mb-6" size={40} />
-           <h4 className="text-xl font-black mb-6 italic uppercase">Chain Validity</h4>
-           <div className="space-y-4">
-              <div className="flex justify-between text-xs py-2 border-b border-white/5"><span className="text-slate-500">Status</span> <span className="font-bold text-emerald-500 tracking-widest">ACTIVE</span></div>
-              <div className="flex justify-between text-xs py-2 border-b border-white/5"><span className="text-slate-500">Node</span> <span className="font-bold">Mainnet Relay 1</span></div>
-           </div>
+        <h1 className="text-[130px] font-black leading-[0.8] tracking-tighter italic">
+          Trustless <br/> <span className="text-indigo-600">Education.</span>
+        </h1>
+        <p className="text-2xl text-slate-500 font-medium max-w-2xl leading-relaxed">
+          The global settlement layer for academic credentials. Verified by Haskell scripts, secured by Cardano.
+        </p>
+        <div className="flex gap-6 mt-12">
+          <Link href="/verify" className="bg-white text-black px-12 py-6 rounded-[32px] font-black text-xl hover:bg-indigo-600 hover:text-white transition-all flex items-center gap-4 group">
+            Verification Portal <ArrowRight className="group-hover:translate-x-2 transition-transform" />
+          </Link>
         </div>
       </div>
-    </div>
+    </main>
   );
 }
